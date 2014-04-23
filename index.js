@@ -15,7 +15,8 @@ function ensureEmpty() {
 }
 
 module.exports = exports = browserifyStrOrFn;
-function browserifyStrOrFn(strOrFn) {
+function browserifyStrOrFn(strOrFn, options) {
+  options = options || {};
   var str = strOrFn;
   if (typeof strOrFn === 'function') {
     str = [
@@ -24,7 +25,7 @@ function browserifyStrOrFn(strOrFn) {
       ')();'
     ].join('\n');
   }
-  return browserify()
+  return browserify(options)
     .add(empty)
     .transform(function (file) {
       if (file !== empty) {
