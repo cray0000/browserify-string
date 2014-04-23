@@ -18,7 +18,7 @@
     "domready": "~0.2.11"
   },
   "peerDependencies": {
-    "browserify": "~2.20.0"
+    "browserify": "*"
   },
   "dependencies": {
     "through": "~2.3.4"
